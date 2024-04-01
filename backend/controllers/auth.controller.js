@@ -19,6 +19,7 @@ export const signup = async (req, res) => {
     // HASH PASSWORD HERE
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
+
     // https://avatar-placeholder.iran.liara.run/
 
     const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
@@ -56,12 +57,12 @@ export const login = async (req, res) => {
   try {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
-    const isPassswordCorrect = await bcrypt.compare(
+    const isPasswordCorrect = await bcrypt.compare(
       password,
       user?.password || ""
     );
 
-    if (!user || !isPassswordCorrect) {
+    if (!user || !isPasswordCorrect) {
       return res.status(400).json({ error: "Invalid username or password" });
     }
 
