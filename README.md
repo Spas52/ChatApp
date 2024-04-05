@@ -1,6 +1,6 @@
 # Chat-App
 Complete Chat App with MERN Stack | JWT, Socket.io, MongoDB
-;    Still in developing....
+;    Open chat app here: https://chatapp-prod-wnmo.onrender.com/
 
 Some Features of This App:
 🌟 Tech stack: MERN + Socket.io + TailwindCSS + Daisy UI
